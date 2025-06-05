@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -19,6 +20,20 @@ export default {
 		},
 		extend: {
 			colors: {
+				// Automotive theme colors
+				racing: {
+					red: '#FF1744',
+					blue: '#00E5FF',
+					orange: '#FF6D00',
+					yellow: '#FFD600',
+				},
+				carbon: {
+					900: '#0A0A0A',
+					800: '#1A1A1A',
+					700: '#2A2A2A',
+					600: '#3A3A3A',
+					500: '#4A4A4A',
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -52,16 +67,6 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +89,45 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'glow': {
+					'0%, 100%': {
+						boxShadow: '0 0 20px rgba(255, 23, 68, 0.5)'
+					},
+					'50%': {
+						boxShadow: '0 0 30px rgba(255, 23, 68, 0.8)'
+					}
+				},
+				'slide-up': {
+					'0%': {
+						transform: 'translateY(20px)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'translateY(0)',
+						opacity: '1'
+					}
+				},
+				'neon-pulse': {
+					'0%, 100%': {
+						boxShadow: '0 0 5px #00E5FF, 0 0 10px #00E5FF, 0 0 15px #00E5FF'
+					},
+					'50%': {
+						boxShadow: '0 0 10px #00E5FF, 0 0 20px #00E5FF, 0 0 30px #00E5FF'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'glow': 'glow 2s ease-in-out infinite',
+				'slide-up': 'slide-up 0.5s ease-out',
+				'neon-pulse': 'neon-pulse 2s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'racing-gradient': 'linear-gradient(135deg, #FF1744, #FF6D00)',
+				'neon-gradient': 'linear-gradient(135deg, #00E5FF, #FFD600)',
+				'carbon-gradient': 'linear-gradient(135deg, #0A0A0A, #2A2A2A)',
 			}
 		}
 	},
